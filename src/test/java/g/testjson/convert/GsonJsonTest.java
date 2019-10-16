@@ -45,11 +45,11 @@ class GsonJsonTest extends TestCase {
 	@Test
 	public void Test3_PrettyFormat_Gson() {
 		String jo = "{ \"name\": \"Baeldung\", \"java\": true }";
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonElement jsonElement = new JsonParser().parse(jo);
 //		System.out.println("Test3:\n" + gson.toJson(jsonElement));
-
-		assertEquals("{\"name\":\"Baeldung\",\"java\":true}", jsonElement.toString());
+		assertEquals("{\"name\":\"Baeldung\",\"java\":true}", jsonElement.toString(
+));
 	}
 
 }
