@@ -1,5 +1,6 @@
 package g.testjson.convert;
 
+import org.json.JSONArray;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -49,8 +50,21 @@ class GsonJsonTest extends TestCase {
 //		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonElement jsonElement = new JsonParser().parse(jo);
 //		System.out.println("Test3:\n" + gson.toJson(jsonElement));
-		assertEquals("{\"name\":\"Baeldung\",\"java\":true}", jsonElement.toString(
-));
+		assertEquals("{\"name\":\"Baeldung\",\"java\":true}", jsonElement.toString());
+	}
+	
+	@Test
+	public void Test4_Add_JSONArray_GSON() {
+		String json = "{ \"name\": \"Baeldung\", \"java\": true }";
+		gson.setGsonObject(new JsonParser().parse(json).getAsJsonObject());
+		JSONArray jsonArray = new JSONArray();
+		jsonArray.put("cat");
+		jsonArray.put("dog");
+		JsonElement jsonElement = new JsonParser().parse(jsonArray.toString());
+		gson.getGsonObject().add("pets", jsonElement);
+		
+		assertEquals("{\"name\":\"Baeldung\",\"java\":true,\"pets\":[\"cat\",\"dog\"]}", gson.getGsonObject().toString());
+		
 	}
 
 }
