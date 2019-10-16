@@ -1,7 +1,5 @@
 package g.testjson.convert;
 
-import static org.junit.Assert.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +31,7 @@ class OrgJSONTest extends TestCase {
 	
 	@Test
 	public void Test_Map_JsonObject() {
-		Map<String, String> map = new HashMap();
+		Map<String, String> map = new HashMap<String, String>();
 		map.put("name", "jon doe");
 		map.put("age", "22");
 		map.put("city", "chicago");
