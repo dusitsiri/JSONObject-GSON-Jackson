@@ -1,4 +1,4 @@
-package g.testjson.convert;
+package g.testjson.convert.jackson;
 
 import java.util.Arrays;
 import java.util.List;

@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import g.testjson.convert.orgJson.OrgJSON;
 import junit.framework.TestCase;
 
 class OrgJSONTest extends TestCase {

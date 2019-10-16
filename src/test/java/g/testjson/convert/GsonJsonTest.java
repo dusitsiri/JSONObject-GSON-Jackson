@@ -9,6 +9,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import g.testjson.convert.gson.GsonJson;
 import junit.framework.TestCase;
 
 class GsonJsonTest extends TestCase {

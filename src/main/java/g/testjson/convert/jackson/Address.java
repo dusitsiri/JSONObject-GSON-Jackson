@@ -1,4 +1,4 @@
-package g.testjson.convert;
+package g.testjson.convert.jackson;
 
 public class Address {
 
