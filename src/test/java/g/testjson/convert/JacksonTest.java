@@ -1,6 +1,6 @@
 package g.testjson.convert;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -22,8 +22,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import g.testjson.convert.jackson.Address;
 import g.testjson.convert.jackson.Employee;
 import g.testjson.convert.jackson.Jackson;
+import junit.framework.TestCase;
 
-class JacksonTest {
+class JacksonTest extends TestCase{
 
 	Jackson jackson;
 
@@ -44,7 +45,9 @@ class JacksonTest {
 			// convert json string to obj
 			Employee emp = jackson.getObjectMapper().readValue(jsonData, Employee.class);
 
-//			System.out.println("Employee Object\n" + emp);
+			System.out.println("Convert JsonString To Object");
+			System.out.println("Employee Object\n" + emp);
+			System.out.println();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,6 +88,7 @@ class JacksonTest {
 		StringWriter stringEmp = new StringWriter();
 		jackson.getObjectMapper().writeValue(stringEmp, emp1);
 		
+		System.out.println("Convert Object To JsonString");
 		System.out.println("Employee JSON is\n" + stringEmp);
 	}
 
